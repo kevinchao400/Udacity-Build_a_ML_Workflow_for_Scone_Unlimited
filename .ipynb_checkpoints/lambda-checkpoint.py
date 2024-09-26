@@ -1,3 +1,5 @@
+# SeralizeImage Function
+
 import json
 import boto3
 import base64
@@ -30,6 +32,7 @@ def lambda_handler(event, context):
         }
     }
 
+# ImageClassification Function
 
 import json
 import sagemaker
@@ -38,7 +41,7 @@ from sagemaker.predictor import Predictor
 from sagemaker.serializers import IdentitySerializer
 
 # Fill this in with the name of your deployed model
-ENDPOINT = 'image-classification-2024-09-25-01-35-35-096'
+ENDPOINT = 'image-classification-2024-09-25-06-16-53-094'
 
 def lambda_handler(event, context):
     # Decode the image data
@@ -60,10 +63,11 @@ def lambda_handler(event, context):
         'body': json.dumps(event)
     }
 
+# FilterInference Function
 
 import json
 
-THRESHOLD = 0.80
+THRESHOLD = 0.93
 
 def lambda_handler(event, context):
 
